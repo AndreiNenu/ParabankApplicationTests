@@ -17,7 +17,7 @@ public class IndexElements {
     }
 
     public WebElement indexRegisterButton(){
-        return driver.findElement(By.xpath("//a[@href='register.htm']"));
+        return driver.findElement(By.cssSelector("a[href='register.htm']"));
     }
 
 }
