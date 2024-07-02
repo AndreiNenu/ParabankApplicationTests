@@ -1,16 +1,16 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="ParabankTestSuite">
 
-    <test name="Register User">
+    <!--<test name="Register User">
         <classes>
             <class name="tests.RegisterUser"/>
         </classes>
-    </test>
+    </test>-->
 
-    <!--<test name="Valid Login">
+    <test name="Login User">
         <classes>
             <class name="tests.ValidLogin"/>
         </classes>
-    </test>-->
+    </test>
 
 </suite>

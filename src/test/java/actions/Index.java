@@ -11,7 +11,20 @@ public class Index {
         elements = new IndexElements(driver);
     }
 
-    public void clickIndexRegisterButton(){
-        elements.indexRegisterButton().click();
+    public void enterUsername(String username){
+        elements.loginUsername().sendKeys(username);
     }
+
+    public void enterPassword(String password){
+        elements.loginPassword().sendKeys(password);
+    }
+
+    public void clickLoginButton(){
+        elements.loginButton().click();
+    }
+
+    public void clickIndexRegisterLink(){
+        elements.indexRegisterLink().click();
+    }
+
 }

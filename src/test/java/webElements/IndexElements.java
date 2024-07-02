@@ -3,10 +3,6 @@ package webElements;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
 
 public class IndexElements {
 
@@ -16,7 +12,19 @@ public class IndexElements {
         this.driver = driver;
     }
 
-    public WebElement indexRegisterButton(){
+    public WebElement loginUsername(){
+        return driver.findElement(By.cssSelector("input[name='username']"));
+    }
+
+    public WebElement loginPassword(){
+        return driver.findElement(By.cssSelector("input[name='password']"));
+    }
+
+    public WebElement loginButton(){
+        return driver.findElement(By.cssSelector("input[class='button']"));
+    }
+
+    public WebElement indexRegisterLink(){
         return driver.findElement(By.cssSelector("a[href='register.htm']"));
     }
 
