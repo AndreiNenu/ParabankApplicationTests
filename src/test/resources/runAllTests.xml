@@ -7,9 +7,15 @@
         </classes>
     </test>-->
 
-    <test name="Login User">
+    <!--<test name="Login User">
         <classes>
             <class name="tests.ValidLogin"/>
+        </classes>
+    </test>-->
+
+    <test name="Login User Error">
+        <classes>
+            <class name="tests.InvalidLogin"/>
         </classes>
     </test>
 
