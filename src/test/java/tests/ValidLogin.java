@@ -35,7 +35,7 @@ public class ValidLogin extends BaseTests {
 
         //Pasul 4: Verifică dacă utilizatorul este redirecționat la pagina de cont.
         String actualMessage = overview.getWelcomeMessageText();
-        Assert.assertEquals(actualMessage,expectedMessage );
+        Assert.assertEquals(actualMessage,expectedMessage);
 
     }
 }
