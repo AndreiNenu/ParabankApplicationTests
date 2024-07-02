@@ -23,6 +23,10 @@ public class Index {
         elements.loginButton().click();
     }
 
+    public String getLoginTitle(){
+        return elements.loginTitle().getText();
+    }
+
     public void clickIndexRegisterLink(){
         elements.indexRegisterLink().click();
     }

@@ -13,9 +13,15 @@
         </classes>
     </test>-->
 
-    <test name="Login User Error">
+    <!--<test name="Login User Error">
         <classes>
             <class name="tests.InvalidLogin"/>
+        </classes>
+    </test>-->
+
+    <test name="Logout User">
+        <classes>
+            <class name="tests.LogoutUser"/>
         </classes>
     </test>
 

@@ -21,4 +21,10 @@ public class Overview {
         wait.until(d-> elements.welcomeMessage().isDisplayed());
         return elements.welcomeMessage().getText();
     }
+
+    public void clickLogoutButton(){
+        wait.until(d-> elements.logoutButton().isDisplayed());
+        elements.logoutButton().click();
+    }
+
 }

@@ -12,6 +12,10 @@ public class IndexElements {
         this.driver = driver;
     }
 
+    public WebElement loginTitle(){
+        return driver.findElement(By.cssSelector("h2"));
+    }
+
     public WebElement loginUsername(){
         return driver.findElement(By.cssSelector("input[name='username']"));
     }
