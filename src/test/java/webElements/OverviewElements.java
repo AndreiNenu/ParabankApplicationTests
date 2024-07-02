@@ -15,4 +15,9 @@ public class OverviewElements {
     public WebElement welcomeMessage(){
         return driver.findElement(By.cssSelector("p[class='smallText']"));
     }
+
+    public WebElement logoutButton(){
+        return driver.findElement(By.cssSelector("a[href='logout.htm']"));
+    }
+
 }
