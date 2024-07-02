@@ -9,12 +9,13 @@ import org.testng.annotations.BeforeClass;
 public class BaseTests {
 
     public WebDriver driver;
+    private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/ApplicationURLs.properties");
 
     @BeforeClass
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        String testSiteURL = "https://parabank.parasoft.com/parabank/index.htm";
+        String testSiteURL = configLoader.getProperty("applicationURL");
         driver.get(testSiteURL);
     }
 
@@ -24,5 +25,4 @@ public class BaseTests {
             driver.quit();
         }
     }
-
 }

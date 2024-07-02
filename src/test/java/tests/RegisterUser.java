@@ -17,15 +17,12 @@ public class RegisterUser extends BaseTests {
         index = new Index(driver);
         register = new Register(driver);
 
-        index.clickIndexRegisterButton();
+        index.clickIndexRegisterLink();
 
         Assert.assertTrue(register.getRegisterPageTitle().equalsIgnoreCase("Signing up is easy!"));
 
         register.registerUser();
 
     }
-
-
-
 
 }
