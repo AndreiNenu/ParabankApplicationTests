@@ -32,4 +32,9 @@ public class Overview {
         elements.transferFundsLink().click();
     }
 
+    public void clickBillPayLink(){
+        wait.until(d-> elements.billPayLink().isDisplayed());
+        elements.billPayLink().click();
+    }
+
 }
