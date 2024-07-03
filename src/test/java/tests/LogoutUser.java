@@ -12,15 +12,12 @@ public class LogoutUser extends BaseTests {
 
     private Overview overview = null;
     private Index index = null;
-    private ValidLogin user;
-    private IndexElements indexElements;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
     @Test
     public void logoutUser(){
 
-        user = new ValidLogin(driver);
         overview = new Overview(driver);
         index = new Index(driver);
         String username = configLoader.getProperty("username");
@@ -28,7 +25,7 @@ public class LogoutUser extends BaseTests {
         String expectedLoginTitle = configLoaderText.getProperty("expectedLoginTitle");
 
         //Pasul 1: Autentifică-te în aplicație.
-        user.loginUser(username, password);
+        index.loginUser(username, password);
 
         //Pasul 2: Apasă butonul "Logout".
         overview.clickLogoutButton();
