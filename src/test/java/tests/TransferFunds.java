@@ -40,8 +40,8 @@ public class TransferFunds extends BaseTests {
 
         //Pasul 3: Introduce suma, contul sursă și contul destinație.
         transfer.enterTransferAmount(transferAmount);
-        transfer.selectIndexFromAccount(thirdAccount);
-        transfer.selectIndexToAccount(secondAccount);
+        transfer.selectValueFromAccount(thirdAccount);
+        transfer.selectValueToAccount(secondAccount);
 
         //Pasul 4: Apasă butonul "Transfer".
         transfer.clickTransferButton();

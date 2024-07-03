@@ -25,7 +25,7 @@ public class Transfer {
         elements.transferAmount().sendKeys(amount);
     }
 
-    public void selectIndexFromAccount(String value) {
+    public void selectValueFromAccount(String value) {
         wait.until((ExpectedCondition<Boolean>) new ExpectedCondition<Boolean>(){
             public Boolean apply(WebDriver driver)
             {
@@ -37,7 +37,7 @@ public class Transfer {
         select.selectByValue(value);
     }
 
-    public void selectIndexToAccount(String value) {
+    public void selectValueToAccount(String value) {
         wait.until((ExpectedCondition<Boolean>) new ExpectedCondition<Boolean>(){
             public Boolean apply(WebDriver driver)
             {

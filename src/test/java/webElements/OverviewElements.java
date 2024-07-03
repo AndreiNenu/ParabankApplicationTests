@@ -24,4 +24,8 @@ public class OverviewElements {
         return driver.findElement(By.cssSelector("a[href='transfer.htm']"));
     }
 
+    public WebElement billPayLink(){
+        return driver.findElement(By.cssSelector("a[href='billpay.htm']"));
+    }
+
 }
