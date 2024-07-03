@@ -27,4 +27,9 @@ public class Overview {
         elements.logoutButton().click();
     }
 
+    public void clickTransferFundsLink(){
+        wait.until(d-> elements.transferFundsLink().isDisplayed());
+        elements.transferFundsLink().click();
+    }
+
 }

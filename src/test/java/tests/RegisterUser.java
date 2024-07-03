@@ -24,5 +24,4 @@ public class RegisterUser extends BaseTests {
         register.registerUser();
 
     }
-
 }

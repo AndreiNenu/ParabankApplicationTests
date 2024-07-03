@@ -31,4 +31,9 @@ public class Index {
         elements.indexRegisterLink().click();
     }
 
+    public void loginUser(String username, String password){
+        enterUsername(username);
+        enterPassword(password);
+        clickLoginButton();
+    }
 }

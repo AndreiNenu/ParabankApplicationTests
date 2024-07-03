@@ -20,4 +20,8 @@ public class OverviewElements {
         return driver.findElement(By.cssSelector("a[href='logout.htm']"));
     }
 
+    public WebElement transferFundsLink(){
+        return driver.findElement(By.cssSelector("a[href='transfer.htm']"));
+    }
+
 }
