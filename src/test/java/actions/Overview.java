@@ -42,4 +42,9 @@ public class Overview {
         elements.openNewAccountLink().click();
     }
 
+    public void clickUpdateContactInfoLink(){
+        wait.until(d-> elements.updateContactInfoLink().isDisplayed());
+        elements.updateContactInfoLink().click();
+    }
+
 }
