@@ -32,4 +32,8 @@ public class OverviewElements {
         return driver.findElement(By.cssSelector("a[href='openaccount.htm']"));
     }
 
+    public WebElement updateContactInfoLink(){
+        return driver.findElement(By.cssSelector("a[href='updateprofile.htm']"));
+    }
+
 }
