@@ -32,4 +32,8 @@ public class IndexElements {
         return driver.findElement(By.cssSelector("a[href='register.htm']"));
     }
 
+    public WebElement indexForgotLoginInfoLink(){
+        return driver.findElement(By.cssSelector("a[href='lookup.htm']"));
+    }
+
 }

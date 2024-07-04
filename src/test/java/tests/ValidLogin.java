@@ -13,10 +13,6 @@ public class ValidLogin extends BaseTests {
     private Overview overview = null;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
 
-    /*public ValidLogin(WebDriver driver){
-        index = new Index(driver);
-    }*/
-
     @Test
     public void loginUserTest(){
 
