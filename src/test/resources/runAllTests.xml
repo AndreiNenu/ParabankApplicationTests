@@ -19,9 +19,27 @@
         </classes>
     </test>-->
 
-    <test name="Logout User">
+    <!--<test name="Logout User">
         <classes>
             <class name="tests.LogoutUser"/>
+        </classes>
+    </test>-->
+
+    <!--<test name="Open Account">
+        <classes>
+            <class name="tests.OpenNewAccount"/>
+        </classes>
+    </test>-->
+
+    <!--<test name="Pay Bill">
+        <classes>
+            <class name="tests.PayABill"/>
+        </classes>
+    </test>-->
+
+    <test name="Transfer Funds">
+        <classes>
+            <class name="tests.TransferFunds"/>
         </classes>
     </test>
 

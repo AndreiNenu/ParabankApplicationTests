@@ -37,4 +37,9 @@ public class Overview {
         elements.billPayLink().click();
     }
 
+    public void clickOpenNewAccountLink(){
+        wait.until(d-> elements.openNewAccountLink().isDisplayed());
+        elements.openNewAccountLink().click();
+    }
+
 }
