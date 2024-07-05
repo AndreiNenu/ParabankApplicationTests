@@ -36,4 +36,12 @@ public class OverviewElements {
         return driver.findElement(By.cssSelector("a[href='updateprofile.htm']"));
     }
 
+    public WebElement accountOverview(){
+        return driver.findElement(By.cssSelector("a[href='overview.htm']"));
+    }
+
+    public WebElement defaultAccount(){
+        return driver.findElement(By.cssSelector("#accountTable > tbody > tr:nth-child(1) > td:nth-child(1) > a"));
+    }
+
 }

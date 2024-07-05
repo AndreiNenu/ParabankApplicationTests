@@ -47,4 +47,14 @@ public class Overview {
         elements.updateContactInfoLink().click();
     }
 
+    public void clickAccountOverview(){
+        wait.until(d-> elements.accountOverview().isDisplayed());
+        elements.accountOverview().click();
+    }
+
+    public void clickDefaultAccount(){
+        wait.until(d-> elements.defaultAccount().isDisplayed());
+        elements.defaultAccount().click();
+    }
+
 }
