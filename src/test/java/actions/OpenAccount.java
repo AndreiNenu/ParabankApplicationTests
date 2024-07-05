@@ -52,4 +52,16 @@ public class OpenAccount {
         wait.until(d -> elements.openAccountCompleteMessage().isDisplayed());
         return elements.openAccountCompleteMessage().getText();
     }
+
+    public String[] getOpenAccountPageInfo() {
+        wait.until(d -> elements.openAccountCompleteMessage().isDisplayed());
+        String[] array = new String[3];
+        array[0] = elements.openAccountPageTitle().getText();
+        array[1] = elements.typeOfAccountDropdown().getText();
+        array[2] = elements.fromAccountDropdown().getText();
+
+        return array;
+    }
+
+
 }

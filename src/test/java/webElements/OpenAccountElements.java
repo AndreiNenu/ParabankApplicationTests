@@ -28,4 +28,8 @@ public class OpenAccountElements {
         return driver.findElement(By.xpath("//h1[contains(text(),'Account Opened!')]"));
     }
 
+    public WebElement openAccountPageTitle(){
+        return driver.findElement(By.xpath("//h1[contains(text(),'Open New Account')]"));
+    }
+
 }
