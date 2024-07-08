@@ -41,7 +41,7 @@ public class OpenAccount {
             public Boolean apply(WebDriver driver)
             {
                 select = new Select(elements.fromAccountDropdown());
-                return select.getOptions().size()>1;
+                return select.getOptions().size()>0;
             }
         });
         select = new Select(elements.fromAccountDropdown());
