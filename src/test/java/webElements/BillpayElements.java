@@ -12,6 +12,8 @@ public class BillpayElements {
         this.driver = driver;
     }
 
+    public WebElement billPayTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Bill Payment Service')]")); }
+
     public WebElement payeeName(){
         return driver.findElement(By.cssSelector("input[name='payee.name']"));
     }
