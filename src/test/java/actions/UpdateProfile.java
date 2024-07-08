@@ -60,4 +60,10 @@ public class UpdateProfile {
         wait.until(d -> elements.profileUpdateMessage().isDisplayed());
         return elements.profileUpdateMessage().getText();
     }
+
+    public String getUpdateProfileTitle(){
+        wait.until(d -> elements.updateProfileTitle().isDisplayed());
+        return elements.updateProfileTitle().getText();
+    }
+
 }

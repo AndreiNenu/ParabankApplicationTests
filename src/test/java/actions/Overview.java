@@ -22,9 +22,52 @@ public class Overview {
         return elements.welcomeMessage().getText();
     }
 
-    public void clickLogoutButton(){
-        wait.until(d-> elements.logoutButton().isDisplayed());
-        elements.logoutButton().click();
+    public void clickDefaultAccount(){
+        wait.until(d-> elements.defaultAccount().isDisplayed());
+        elements.defaultAccount().click();
+    }
+
+    public String getAccountOverviewTitle(){
+        wait.until(d-> elements.accountOverviewTitle().isDisplayed());
+        return elements.accountOverviewTitle().getText();
+    }
+
+    public String getDefaultAccountNumber(){
+        wait.until(d-> elements.defaultAccount().isDisplayed());
+        return elements.defaultAccount().getText();
+    }
+
+    public String[] getAccountOverviewPageInfo() {
+        wait.until(d -> elements.accountOverviewTitle().isDisplayed());
+        String[] array = new String[2];
+        array[0] = getAccountOverviewTitle();
+        array[1] = getDefaultAccountNumber();
+
+        return array;
+    }
+
+    //temporary method from Find Transaction page
+    public String getFindTransactionTitle(){
+        wait.until(d-> elements.findTransactionTitle().isDisplayed());
+        return elements.findTransactionTitle().getText();
+    }
+
+    //temporary method from Request Loan page
+    public String getRequestLoanTitle(){
+        wait.until(d-> elements.requestLoanTitle().isDisplayed());
+        return elements.requestLoanTitle().getText();
+    }
+
+
+    //Main Menu Action Links
+    public void clickOpenNewAccountLink(){
+        wait.until(d-> elements.openNewAccountLink().isDisplayed());
+        elements.openNewAccountLink().click();
+    }
+
+    public void clickAccountOverview(){
+        wait.until(d-> elements.accountOverview().isDisplayed());
+        elements.accountOverview().click();
     }
 
     public void clickTransferFundsLink(){
@@ -37,9 +80,9 @@ public class Overview {
         elements.billPayLink().click();
     }
 
-    public void clickOpenNewAccountLink(){
-        wait.until(d-> elements.openNewAccountLink().isDisplayed());
-        elements.openNewAccountLink().click();
+    public void clickFindTransactionsLink(){
+        wait.until(d-> elements.findTransactionsLink().isDisplayed());
+        elements.findTransactionsLink().click();
     }
 
     public void clickUpdateContactInfoLink(){
@@ -47,14 +90,14 @@ public class Overview {
         elements.updateContactInfoLink().click();
     }
 
-    public void clickAccountOverview(){
-        wait.until(d-> elements.accountOverview().isDisplayed());
-        elements.accountOverview().click();
+    public void clickRequestLoanLink(){
+        wait.until(d-> elements.requestLoanLink().isDisplayed());
+        elements.requestLoanLink().click();
     }
 
-    public void clickDefaultAccount(){
-        wait.until(d-> elements.defaultAccount().isDisplayed());
-        elements.defaultAccount().click();
+    public void clickLogoutButton(){
+        wait.until(d-> elements.logoutButton().isDisplayed());
+        elements.logoutButton().click();
     }
 
 }

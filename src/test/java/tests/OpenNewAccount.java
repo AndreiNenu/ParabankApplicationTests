@@ -40,8 +40,8 @@ public class OpenNewAccount extends BaseTests {
         //Pasul 3: Selectează tipul de cont și contul sursă.
         //openAccount.selectTypeOfAccount(checkingAccount);
         openAccount.selectTypeOfAccount(savingsAccount);
-        //openAccount.selectFromAccount(defaultAccount);
-        openAccount.selectFromAccount(secondAccount);
+        openAccount.selectFromAccount(defaultAccount);
+        //openAccount.selectFromAccount(secondAccount);
         //openAccount.selectFromAccount(thirdAccount);
 
         //Pasul 4: Apasă butonul "Open New Account".

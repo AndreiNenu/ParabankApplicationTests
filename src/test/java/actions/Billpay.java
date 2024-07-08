@@ -20,6 +20,11 @@ public class Billpay {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+    public String getBillPayTitle(){
+        wait.until(d-> elements.billPayTitle().isDisplayed());
+        return elements.billPayTitle().getText();
+    }
+
     public void setPayeeName(String payeeName){
         elements.payeeName().sendKeys(payeeName);
     }

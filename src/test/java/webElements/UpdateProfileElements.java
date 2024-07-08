@@ -12,6 +12,10 @@ public class UpdateProfileElements {
         this.driver = driver;
     }
 
+    public WebElement updateProfileTitle(){
+        return driver.findElement(By.cssSelector("#updateProfileForm > h1"));
+    }
+
     public WebElement firstName(){
         return driver.findElement(By.xpath("//input[@id='customer.firstName']"));
     }

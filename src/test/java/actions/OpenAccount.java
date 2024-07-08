@@ -53,15 +53,30 @@ public class OpenAccount {
         return elements.openAccountCompleteMessage().getText();
     }
 
-    public String[] getOpenAccountPageInfo() {
-        wait.until(d -> elements.openAccountCompleteMessage().isDisplayed());
+    public String getAccountPageTitle(){
+        wait.until(d -> elements.openAccountPageTitle().isDisplayed());
+        return elements.openAccountPageTitle().getText();
+    }
+
+    public String getAccountTypeDefaultText(){
+        wait.until(d -> elements.accountTypeChecking().isDisplayed());
+        return elements.accountTypeChecking().getText();
+    }
+
+    public String getFromAccountDefaultText(){
+        wait.until(d -> elements.fromAccountDefault().isDisplayed());
+        return elements.fromAccountDefault().getText();
+    }
+
+    public String[] getTransferFundsPageInfo() {
+        wait.until(d -> elements.openAccountPageTitle().isDisplayed());
         String[] array = new String[3];
-        array[0] = elements.openAccountPageTitle().getText();
-        array[1] = elements.typeOfAccountDropdown().getText();
-        array[2] = elements.fromAccountDropdown().getText();
+        array[0] = getAccountPageTitle();
+        array[1] = getAccountTypeDefaultText();
+        array[2] = getFromAccountDefaultText();
+
 
         return array;
     }
-
 
 }
