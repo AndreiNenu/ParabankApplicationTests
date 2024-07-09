@@ -48,4 +48,8 @@ public class LookupElements {
         return driver.findElement(By.cssSelector("#rightPanel > p:nth-child(2)"));
     }
 
+    public WebElement RecoveredUserInfo(){
+        return driver.findElement(By.cssSelector("#rightPanel > p:nth-child(3)"));
+    }
+
 }

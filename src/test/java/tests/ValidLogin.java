@@ -40,7 +40,7 @@ public class ValidLogin extends BaseTests {
         //Pasul3 : Apasă butonul "Login".
         index.clickLoginButton();
 
-        //Verificam daca userul este inregistrat
+        //Extra functionality: Verificam daca userul este inregistrat
         if(login.isUserNotRegistered()){
             index.clickIndexRegisterLink();
             register.registerUser();
