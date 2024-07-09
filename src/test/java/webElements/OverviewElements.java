@@ -20,12 +20,6 @@ public class OverviewElements {
 
     public WebElement accountOverviewTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Accounts Overview')]")); }
 
-    //temporary element from Find Transaction page
-    public WebElement findTransactionTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Find Transactions')]")); }
-
-    //temporary element from Request Loan page
-    public WebElement requestLoanTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Apply for a Loan')]")); }
-
 
     //Main Menu WebElements Links
     public WebElement openNewAccountLink(){

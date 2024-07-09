@@ -15,6 +15,8 @@ public class MainMenuNavigation extends BaseTests {
     private Transfer transfer = null;
     private Billpay billpay = null;
     private UpdateProfile updateProfile = null;
+    private FindTrans findTrans = null;
+    private RequestLoan requestLoan = null;
     private UpdateProfileElements updateProfileElements;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
 
@@ -26,7 +28,9 @@ public class MainMenuNavigation extends BaseTests {
         overview = new Overview(driver);
         transfer = new Transfer(driver);
         billpay = new Billpay(driver);
+        findTrans = new FindTrans(driver);
         updateProfile = new UpdateProfile(driver);
+        requestLoan = new RequestLoan(driver);
         updateProfileElements = new UpdateProfileElements(driver);
 
         String username = configLoader.getProperty("username");
@@ -66,7 +70,7 @@ public class MainMenuNavigation extends BaseTests {
         System.out.println(actualValue[0]);
 
         overview.clickFindTransactionsLink();
-        actualValue[0] = overview.getFindTransactionTitle();
+        actualValue[0] = findTrans.getFindTransactionTitle();
         System.out.println(actualValue[0]);
 
         overview.clickUpdateContactInfoLink();
@@ -75,7 +79,7 @@ public class MainMenuNavigation extends BaseTests {
         System.out.println(actualValue[0]);
 
         overview.clickRequestLoanLink();
-        actualValue[0] = overview.getRequestLoanTitle();
+        actualValue[0] = requestLoan.getRequestLoanTitle();
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Apply for a Loan"));
         System.out.println(actualValue[0]);
 
