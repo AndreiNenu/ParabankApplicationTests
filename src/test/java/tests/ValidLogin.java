@@ -1,7 +1,9 @@
 package tests;
 
 import actions.Index;
+import actions.Login;
 import actions.Overview;
+import actions.Register;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTests;
@@ -11,6 +13,8 @@ public class ValidLogin extends BaseTests {
 
     public Index index = null;
     private Overview overview = null;
+    private Login login = null;
+    private Register register = null;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
 
     @Test
@@ -18,6 +22,8 @@ public class ValidLogin extends BaseTests {
 
         overview = new Overview(driver);
         index = new Index(driver);
+        login = new Login(driver);
+        register = new Register(driver);
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");
         String firstName = configLoader.getProperty("firstName");
@@ -32,6 +38,12 @@ public class ValidLogin extends BaseTests {
 
         //Pasul3 : Apasă butonul "Login".
         index.clickLoginButton();
+
+        //Verificam daca userul este inregistrat
+        if(login.isUserNotRegistered()){
+            index.clickIndexRegisterLink();
+            register.registerUser();
+        }
 
         //Pasul 4: Verifică dacă utilizatorul este redirecționat la pagina de cont.
         String actualMessage = overview.getWelcomeMessageText();

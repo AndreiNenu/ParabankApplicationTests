@@ -27,4 +27,13 @@ public class Login {
         wait.until(d-> elements.errorLoginMessage().isDisplayed());
         return elements.errorLoginMessage().getText();
     }
+
+    public boolean isUserNotRegistered(){
+        try {
+            wait.until(d -> elements.errorLoginMessage().isDisplayed());
+            return elements.errorLoginMessage().isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
 }
