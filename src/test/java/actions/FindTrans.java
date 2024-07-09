@@ -17,6 +17,7 @@ public class FindTrans {
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
+
     public String getFindTransactionTitle(){
         wait.until(d-> elements.findTransactionTitle().isDisplayed());
         return elements.findTransactionTitle().getText();

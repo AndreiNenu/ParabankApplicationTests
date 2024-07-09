@@ -21,4 +21,5 @@ public class RequestLoan {
         wait.until(d-> elements.requestLoanTitle().isDisplayed());
         return elements.requestLoanTitle().getText();
     }
+
 }

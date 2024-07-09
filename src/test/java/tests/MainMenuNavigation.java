@@ -5,7 +5,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
-import webElements.UpdateProfileElements;
 
 public class MainMenuNavigation extends BaseTests {
 
@@ -17,8 +16,8 @@ public class MainMenuNavigation extends BaseTests {
     private UpdateProfile updateProfile = null;
     private FindTrans findTrans = null;
     private RequestLoan requestLoan = null;
-    private UpdateProfileElements updateProfileElements;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
+
 
     @Test
     public void mainMenuNavigation(){
@@ -31,7 +30,6 @@ public class MainMenuNavigation extends BaseTests {
         findTrans = new FindTrans(driver);
         updateProfile = new UpdateProfile(driver);
         requestLoan = new RequestLoan(driver);
-        updateProfileElements = new UpdateProfileElements(driver);
 
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");

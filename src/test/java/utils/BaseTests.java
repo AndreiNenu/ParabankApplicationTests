@@ -25,4 +25,5 @@ public class BaseTests {
             driver.quit();
         }
     }
+
 }

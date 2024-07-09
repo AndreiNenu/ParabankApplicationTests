@@ -12,6 +12,8 @@ public class FindTransElements {
         this.driver = driver;
     }
 
-    public WebElement findTransactionTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Find Transactions')]")); }
+    public WebElement findTransactionTitle(){
+        return driver.findElement(By.xpath("//h1[contains(text(),'Find Transactions')]"));
+    }
 
 }

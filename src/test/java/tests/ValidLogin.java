@@ -17,6 +17,7 @@ public class ValidLogin extends BaseTests {
     private Register register = null;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
 
+
     @Test
     public void loginUserTest(){
 

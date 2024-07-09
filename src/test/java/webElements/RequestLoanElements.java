@@ -12,6 +12,8 @@ public class RequestLoanElements {
         this.driver = driver;
     }
 
-    public WebElement requestLoanTitle(){ return driver.findElement(By.xpath("//h1[contains(text(),'Apply for a Loan')]")); }
+    public WebElement requestLoanTitle(){
+        return driver.findElement(By.xpath("//h1[contains(text(),'Apply for a Loan')]"));
+    }
 
 }
