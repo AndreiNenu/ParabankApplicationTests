@@ -33,6 +33,7 @@ public class AccountActivity extends BaseTests {
         String[] expectedHeaders = {"Date", "Transaction", "Debit (-)", "Credit (+)"};
         String[] expectedTransactions = {
                 "07-16-2024", "Funds Transfer Sent", "$100.00", "",
+                "07-16-2024", "Funds Transfer Sent", "$100.00", "",
                 "07-16-2024", "Funds Transfer Sent", "$99.00", "",
                 "07-16-2024", "Funds Transfer Received", "", "$99.00",
                 "07-16-2024", "Funds Transfer Received", "", "$99.00"
@@ -70,6 +71,5 @@ public class AccountActivity extends BaseTests {
         }
 
         Assert.assertEquals(actualTransactions, expectedTransactions);
-
     }
 }

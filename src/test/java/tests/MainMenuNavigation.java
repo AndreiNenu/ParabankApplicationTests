@@ -6,7 +6,10 @@ import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
 
+import javax.print.DocFlavor;
+
 public class MainMenuNavigation extends BaseTests {
+
 
     public Index index = null;
     private Overview overview = null;
@@ -36,7 +39,7 @@ public class MainMenuNavigation extends BaseTests {
         String defaultAccount = configLoader.getProperty("defaultAccount");
         String[] actualValue;
         String expectedValue;
-        String[] expectedArr ;
+        String[] expectedArr;
 
         //Pasul 1: Autentifică-te în aplicație.
         index.loginUser(username, password);
@@ -47,41 +50,40 @@ public class MainMenuNavigation extends BaseTests {
         overview.clickOpenNewAccountLink();
         actualValue = openAccount.getTransferFundsPageInfo();
         expectedArr = new String[]{"Open New Account", "CHECKING", defaultAccount };
+        System.out.println("Array length: " + expectedArr.length);
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Open New Account"));
         Assert.assertTrue(actualValue[1].equalsIgnoreCase("CHECKING"));
         Assert.assertTrue(actualValue[2].equalsIgnoreCase(defaultAccount));
-        for(String cuvant:actualValue){
-            int i=0;
-            System.out.println("Actual value: " + cuvant + "\n" +
+        for(int i=0; i< actualValue.length; i++){
+            System.out.println("Actual value: " + actualValue[i] + "\n" +
                     "Expected value: " + expectedArr[i]);
-            i++;
         }
+
 
         overview.clickAccountOverview();
         actualValue = overview.getAccountOverviewPageInfo();
         expectedArr = new String[]{"Accounts Overview", defaultAccount };
+        System.out.println("Array length: " + expectedArr.length);
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Accounts Overview"));
         Assert.assertTrue(actualValue[1].equalsIgnoreCase(defaultAccount));
-        for(String cuvant:actualValue){
-            int i=0;
-            System.out.println("Actual value: " + cuvant + "\n" +
+        for(int i=0; i< actualValue.length; i++){
+            System.out.println("Actual value: " + actualValue[i] + "\n" +
                     "Expected value: " + expectedArr[i]);
-            i++;
         }
 
         overview.clickTransferFundsLink();
         actualValue = transfer.getTransferFundsPageInfo();
         expectedArr = new String[]{"Transfer Funds", "", defaultAccount, defaultAccount };
+        System.out.println("Array length: " + expectedArr.length);
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Transfer Funds"));
         Assert.assertTrue(actualValue[1].isEmpty());
         Assert.assertTrue(actualValue[2].equalsIgnoreCase(defaultAccount));
         Assert.assertTrue(actualValue[3].equalsIgnoreCase(defaultAccount));
-        for(String cuvant:actualValue){
-            int i=0;
-            System.out.println("Actual value: " + cuvant + "\n" +
-                "Expected value: " + expectedArr[i]);
-            i++;
+        for(int i=0; i< actualValue.length; i++){
+            System.out.println("Actual value: " + actualValue[i] + "\n" +
+                    "Expected value: " + expectedArr[i]);
         }
+
 
         overview.clickBillPayLink();
         actualValue[0] = billpay.getBillPayTitle();
@@ -118,5 +120,10 @@ public class MainMenuNavigation extends BaseTests {
         System.out.println("Actual value: " + actualValue[0] + "\n" +
                 "Expected value: " + expectedValue);
 
+    }
+
+    public static String[] resize(String[] array, int capacity){
+        array = new String[capacity];
+        return array;
     }
 }

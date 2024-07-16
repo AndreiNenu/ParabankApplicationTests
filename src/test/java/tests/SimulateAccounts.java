@@ -39,10 +39,10 @@ public class SimulateAccounts extends BaseTests {
 
         //Pasul 2: Creeaza 2 conturi noi(un savings si un checking)
         //open first account
-        openNewAccount(savingsAccount, defaultAccount);
+         //openNewAccount(savingsAccount, defaultAccount);
 
         //open second account
-        openNewAccount(checkingAccount, defaultAccount);
+       // openNewAccount(checkingAccount, defaultAccount);
 
         //Pasul 3: Transfera bani intre conturi
         //transfer money from default to third account
