@@ -33,7 +33,10 @@ public class MainMenuNavigation extends BaseTests {
 
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");
+        String defaultAccount = configLoader.getProperty("defaultAccount");
         String[] actualValue;
+        String expectedValue;
+        String[] expectedArr ;
 
         //Pasul 1: Autentifică-te în aplicație.
         index.loginUser(username, password);
@@ -43,48 +46,77 @@ public class MainMenuNavigation extends BaseTests {
 
         overview.clickOpenNewAccountLink();
         actualValue = openAccount.getTransferFundsPageInfo();
+        expectedArr = new String[]{"Open New Account", "CHECKING", defaultAccount };
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Open New Account"));
         Assert.assertTrue(actualValue[1].equalsIgnoreCase("CHECKING"));
-        Assert.assertTrue(actualValue[2].equalsIgnoreCase(configLoader.getProperty("defaultAccount")));
-        for(String cuvant:actualValue){System.out.println(cuvant);}
+        Assert.assertTrue(actualValue[2].equalsIgnoreCase(defaultAccount));
+        for(String cuvant:actualValue){
+            int i=0;
+            System.out.println("Actual value: " + cuvant + "\n" +
+                    "Expected value: " + expectedArr[i]);
+            i++;
+        }
 
         overview.clickAccountOverview();
         actualValue = overview.getAccountOverviewPageInfo();
+        expectedArr = new String[]{"Accounts Overview", defaultAccount };
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Accounts Overview"));
-        Assert.assertTrue(actualValue[1].equalsIgnoreCase(configLoader.getProperty("defaultAccount")));
-        for(String cuvant:actualValue){System.out.println(cuvant);}
+        Assert.assertTrue(actualValue[1].equalsIgnoreCase(defaultAccount));
+        for(String cuvant:actualValue){
+            int i=0;
+            System.out.println("Actual value: " + cuvant + "\n" +
+                    "Expected value: " + expectedArr[i]);
+            i++;
+        }
 
         overview.clickTransferFundsLink();
         actualValue = transfer.getTransferFundsPageInfo();
+        expectedArr = new String[]{"Transfer Funds", "", defaultAccount, defaultAccount };
         Assert.assertTrue(actualValue[0].equalsIgnoreCase("Transfer Funds"));
         Assert.assertTrue(actualValue[1].isEmpty());
-        Assert.assertTrue(actualValue[2].equalsIgnoreCase(configLoader.getProperty("defaultAccount")));
-        Assert.assertTrue(actualValue[3].equalsIgnoreCase(configLoader.getProperty("defaultAccount")));
-        for(String cuvant:actualValue){System.out.println(cuvant);}
+        Assert.assertTrue(actualValue[2].equalsIgnoreCase(defaultAccount));
+        Assert.assertTrue(actualValue[3].equalsIgnoreCase(defaultAccount));
+        for(String cuvant:actualValue){
+            int i=0;
+            System.out.println("Actual value: " + cuvant + "\n" +
+                "Expected value: " + expectedArr[i]);
+            i++;
+        }
 
         overview.clickBillPayLink();
         actualValue[0] = billpay.getBillPayTitle();
-        Assert.assertTrue(actualValue[0].equalsIgnoreCase("Bill Payment Service"));
-        System.out.println(actualValue[0]);
+        expectedValue = "Bill Payment Service";
+        Assert.assertTrue(actualValue[0].equalsIgnoreCase(expectedValue));
+        System.out.println("Actual value: " + actualValue[0] + "\n" +
+                "Expected value: " + expectedValue);
 
         overview.clickFindTransactionsLink();
         actualValue[0] = findTrans.getFindTransactionTitle();
-        System.out.println(actualValue[0]);
+        expectedValue = "Find Transactions";
+        Assert.assertTrue(actualValue[0].equalsIgnoreCase(expectedValue));
+        System.out.println("Actual value: " + actualValue[0] + "\n" +
+                "Expected value: " + expectedValue);
 
         overview.clickUpdateContactInfoLink();
         actualValue[0] = updateProfile.getUpdateProfileTitle();
-        Assert.assertTrue(actualValue[0].equalsIgnoreCase("Update Profile"));
-        System.out.println(actualValue[0]);
+        expectedValue = "Update Profile";
+        Assert.assertTrue(actualValue[0].equalsIgnoreCase(expectedValue));
+        System.out.println("Actual value: " + actualValue[0] + "\n" +
+                "Expected value: " + expectedValue);
 
         overview.clickRequestLoanLink();
         actualValue[0] = requestLoan.getRequestLoanTitle();
-        Assert.assertTrue(actualValue[0].equalsIgnoreCase("Apply for a Loan"));
-        System.out.println(actualValue[0]);
+        expectedValue = "Apply for a Loan";
+        Assert.assertTrue(actualValue[0].equalsIgnoreCase(expectedValue));
+        System.out.println("Actual value: " + actualValue[0] + "\n" +
+                "Expected value: " + expectedValue);
 
         overview.clickLogoutButton();
         actualValue[0] = index.getLoginTitle();
-        Assert.assertTrue(actualValue[0].equalsIgnoreCase("Customer Login"));
-        System.out.println(actualValue[0]);
+        expectedValue = "Customer Login";
+        Assert.assertTrue(actualValue[0].equalsIgnoreCase(expectedValue));
+        System.out.println("Actual value: " + actualValue[0] + "\n" +
+                "Expected value: " + expectedValue);
 
     }
 }

@@ -16,7 +16,7 @@ public class InvalidLogin extends BaseTests {
 
 
     @Test
-    public void loginUser(){
+    public void invalidLogin(){
 
         index = new Index(driver);
         login = new Login(driver);

@@ -19,7 +19,7 @@ public class ValidLogin extends BaseTests {
 
 
     @Test
-    public void loginUserTest(){
+    public void validLogin(){
 
         overview = new Overview(driver);
         index = new Index(driver);
