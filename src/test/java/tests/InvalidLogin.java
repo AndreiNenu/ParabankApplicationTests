@@ -18,6 +18,11 @@ public class InvalidLogin extends BaseTests {
     @Test
     public void invalidLogin(){
 
+
+        initTest("Invalid Login");
+
+
+
         index = new Index(driver);
         login = new Login(driver);
         String username = configLoaderData.getProperty("username");
