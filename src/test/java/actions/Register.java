@@ -72,8 +72,6 @@ public class Register {
         elements.registerButton().click();
     }
 
-
-
     public void registerUser(){
 
         String firstName = configLoader.getProperty("firstName");
@@ -86,7 +84,6 @@ public class Register {
         String socialSecurityNumber = configLoader.getProperty("socialSecurityNumber");
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");
-
 
         setFirstName(firstName);
         setLastName(lastName);

@@ -6,7 +6,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
-import webElements.IndexElements;
 
 public class LogoutUser extends BaseTests {
 
@@ -14,6 +13,7 @@ public class LogoutUser extends BaseTests {
     private Index index = null;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
+
 
     @Test
     public void logoutUser(){

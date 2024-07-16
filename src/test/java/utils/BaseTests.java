@@ -75,4 +75,5 @@ public class BaseTests {
         //capture and save screenshot
         screenshotUtils.captureAndSaveScreenshots(testName);
     }
+
 }

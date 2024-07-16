@@ -76,6 +76,7 @@ public class Transfer {
     public String[] getTransferFundsPageInfo() {
         wait.until(d -> elements.transferFundsTitle().isDisplayed());
         String[] array = new String[4];
+
         array[0] = getTransferFundsTitle();
         array[1] = elements.transferAmount().getText();
         array[2] = getFromAccountText();

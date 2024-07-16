@@ -15,8 +15,9 @@ public class RecoverLoginInfo extends BaseTests {
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
+
     @Test
-    public void loginUserTest(){
+    public void recoverLoginInfo(){
 
         lookup = new Lookup(driver);
         index = new Index(driver);
@@ -28,6 +29,8 @@ public class RecoverLoginInfo extends BaseTests {
         String zipCode = configLoader.getProperty("zipCode");
         String socialSecurityNumber = configLoader.getProperty("socialSecurityNumber");
         String expectedRecoveryMessage = configLoaderText.getProperty("expectedRecoveryMessage");
+        String expectedUsername = configLoader.getProperty("username");
+        String expectedPassword = configLoader.getProperty("password");
 
         //Pasul 1: Navighează la pagina de login. (se face in BaseTests-> metoda setUp()
 
@@ -48,7 +51,21 @@ public class RecoverLoginInfo extends BaseTests {
 
         //Pasul 5: Verifică dacă un mesaj de recuperare a parolei este trimis.
         String actualRecoveryPayMessage = lookup.getRecoveryMessageText();
+        String userInfo = lookup.getRecoveredUserInfo();
+        String[] arr= userInfo.split("\n");
+        for(String str:arr){
+            System.out.println(str);
+        }
+
+        String actualUsername = arr[0].split(" ")[1];
+        String actualPassword = arr[1].split(" ")[1];
+
+        //Verify the successful response message
         Assert.assertEquals(actualRecoveryPayMessage, expectedRecoveryMessage);
+        //Verify recovered username
+        Assert.assertEquals(actualUsername, expectedUsername);
+        //Verify recovered password
+        Assert.assertEquals(actualPassword, expectedPassword);
 
     }
 }

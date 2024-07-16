@@ -3,7 +3,6 @@ package actions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import webElements.IndexElements;
 import webElements.LookupElements;
 
 import java.time.Duration;
@@ -19,6 +18,7 @@ public class Lookup {
     }
 
     public void setFirstName(String firstName){
+        wait.until(d -> elements.findMyLoginInfoButton().isDisplayed());
         elements.firstName().sendKeys(firstName);
     }
 
@@ -53,6 +53,10 @@ public class Lookup {
     public String getRecoveryMessageText(){
         wait.until(d -> elements.recoveryMessage().isDisplayed());
         return elements.recoveryMessage().getText();
+    }
+
+    public String getRecoveredUserInfo(){
+        return elements.RecoveredUserInfo().getText();
     }
 
 }

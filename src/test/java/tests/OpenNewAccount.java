@@ -16,6 +16,7 @@ public class OpenNewAccount extends BaseTests {
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
+
     @Test
     public void openNewAccount() {
 

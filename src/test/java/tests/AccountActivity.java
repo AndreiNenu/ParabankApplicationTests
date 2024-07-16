@@ -31,9 +31,13 @@ public class AccountActivity extends BaseTests {
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");
         String[] expectedHeaders = {"Date", "Transaction", "Debit (-)", "Credit (+)"};
-        String[] expectedTransactions = { "07-08-2024", "Funds Transfer Sent",     "$100.00", "",
-                                          "07-08-2024", "Funds Transfer Sent",     "$100.00", "",
-                                          "07-08-2024", "Funds Transfer Received", "", "$100.00"};
+        String[] expectedTransactions = {
+                "07-16-2024", "Funds Transfer Sent", "$100.00", "",
+                "07-16-2024", "Funds Transfer Sent", "$100.00", "",
+                "07-16-2024", "Funds Transfer Sent", "$99.00", "",
+                "07-16-2024", "Funds Transfer Received", "", "$99.00",
+                "07-16-2024", "Funds Transfer Received", "", "$99.00"
+        };
 
         //Pasul 1: Autentifică-te în aplicație.
         index.loginUser(username, password);
@@ -49,7 +53,7 @@ public class AccountActivity extends BaseTests {
         allTransactions = activity.getAllTransactions();
 
         actualHeaders = new String[allHeaders.size()];
-        for(int i=0; i<allHeaders.size(); i++){
+        for (int i = 0; i < allHeaders.size(); i++) {
             actualHeaders[i] = allHeaders.get(i).getText();
             System.out.print(actualHeaders[i] + "   ");
         }
@@ -58,15 +62,14 @@ public class AccountActivity extends BaseTests {
         Assert.assertEquals(actualHeaders, expectedHeaders);
 
         actualTransactions = new String[allTransactions.size()];
-        for(int i = 0; i <allTransactions.size(); i++){
+        for (int i = 0; i < allTransactions.size(); i++) {
             actualTransactions[i] = allTransactions.get(i).getText();
             System.out.print(actualTransactions[i] + "   ");
-            if(( i+1) % 4 == 0) {
+            if ((i + 1) % 4 == 0) {
                 System.out.println();
             }
         }
 
         Assert.assertEquals(actualTransactions, expectedTransactions);
-
     }
 }
