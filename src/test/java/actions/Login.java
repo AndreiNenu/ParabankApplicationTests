@@ -3,7 +3,6 @@ package actions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import webElements.IndexElements;
 import webElements.LoginElements;
 
 import java.time.Duration;
@@ -27,4 +26,14 @@ public class Login {
         wait.until(d-> elements.errorLoginMessage().isDisplayed());
         return elements.errorLoginMessage().getText();
     }
+
+    public boolean isUserNotRegistered(){
+        try {
+            wait.until(d -> elements.errorLoginMessage().isDisplayed());
+            return elements.errorLoginMessage().isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+
 }

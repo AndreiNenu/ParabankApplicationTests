@@ -46,18 +46,6 @@ public class Overview {
         return array;
     }
 
-    //temporary method from Find Transaction page
-    public String getFindTransactionTitle(){
-        wait.until(d-> elements.findTransactionTitle().isDisplayed());
-        return elements.findTransactionTitle().getText();
-    }
-
-    //temporary method from Request Loan page
-    public String getRequestLoanTitle(){
-        wait.until(d-> elements.requestLoanTitle().isDisplayed());
-        return elements.requestLoanTitle().getText();
-    }
-
 
     //Main Menu Action Links
     public void clickOpenNewAccountLink(){

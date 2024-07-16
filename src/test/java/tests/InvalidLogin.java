@@ -14,8 +14,9 @@ public class InvalidLogin extends BaseTests {
     private ConfigLoader configLoaderData = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
+
     @Test
-    public void loginUser(){
+    public void invalidLogin(){
 
         index = new Index(driver);
         login = new Login(driver);

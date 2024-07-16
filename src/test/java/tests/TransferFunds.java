@@ -17,6 +17,7 @@ public class TransferFunds extends BaseTests {
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
+
     @Test
     public void transferFunds() {
 
@@ -51,5 +52,6 @@ public class TransferFunds extends BaseTests {
         Assert.assertEquals(actualTransferMessage, expectedTransferMessage);
 
         //!!!Verificarea balantelor trebuie terminata!!!
+
     }
 }

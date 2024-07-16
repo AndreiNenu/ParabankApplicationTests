@@ -11,6 +11,7 @@ public class Index {
         elements = new IndexElements(driver);
     }
 
+
     public void enterUsername(String username){
         elements.loginUsername().sendKeys(username);
     }
@@ -40,4 +41,5 @@ public class Index {
         enterPassword(password);
         clickLoginButton();
     }
+
 }
