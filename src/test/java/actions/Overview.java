@@ -1,19 +1,25 @@
 package actions;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import webElements.OverviewElements;
 import java.time.Duration;
+import java.util.List;
 
 public class Overview {
 
     private OverviewElements elements;
     private Wait<WebDriver> wait;
+    private WebDriver driver;
+    public static List<WebElement> accountsAndBalances;
 
     public Overview(WebDriver driver){
         elements = new OverviewElements(driver);
         wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        this.driver = driver;
     }
 
     public String getWelcomeMessageText(){
@@ -45,6 +51,14 @@ public class Overview {
         return array;
     }
 
+    public String[] getAccountIdAndBalance(){
+        wait.until(d-> !elements.userAccountAndBalance().isEmpty());
+        String[] arrayOfStrings = new String[elements.userAccountAndBalance().size()-3];
+        for(int i=0; i<elements.userAccountAndBalance().size()-3; i++){
+            arrayOfStrings[i] = elements.userAccountAndBalance().get(i).getText();
+        }
+        return arrayOfStrings;
+    }
 
     //Main Menu Action Links
     public void clickOpenNewAccountLink(){

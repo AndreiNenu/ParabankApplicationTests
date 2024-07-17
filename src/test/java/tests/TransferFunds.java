@@ -3,16 +3,20 @@ package tests;
 import actions.Index;
 import actions.Overview;
 import actions.Transfer;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
+
+import java.util.List;
 
 public class TransferFunds extends BaseTests {
 
     private Index index = null;
     private Overview overview = null;
     private Transfer transfer = null;
+    String[] arr = new String[20];
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
@@ -30,9 +34,16 @@ public class TransferFunds extends BaseTests {
         String password = configLoader.getProperty("password");
         String transferAmount = configLoaderText.getProperty("transferAmount");
         String expectedTransferMessage = configLoaderText.getProperty("expectedTransferCompleteMessage");
-        String defaultAccount = configLoader.getProperty("defaultAccount");
-        String secondAccount = configLoader.getProperty("secondAccount");
-        String thirdAccount = configLoader.getProperty("thirdAccount");
+        arr = overview.getAccountIdAndBalance();
+        for(String cuvant:arr){
+            System.out.println(cuvant + " ");
+        }
+        //String defaultAccount = configLoader.getProperty("defaultAccount");
+        String defaultAccount = arr[0];
+        //String secondAccount = configLoader.getProperty("secondAccount");
+        String secondAccount = arr[3];
+        //String thirdAccount = configLoader.getProperty("thirdAccount");
+        String thirdAccount = arr[6];
 
         //Pasul 1: Autentifică-te în aplicație.
         index.loginUser(username, password);
@@ -55,4 +66,5 @@ public class TransferFunds extends BaseTests {
         //!!!Verificarea balantelor trebuie terminata!!!
 
     }
+
 }

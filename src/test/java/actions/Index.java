@@ -7,7 +7,7 @@ public class Index {
 
     private IndexElements elements;
 
-    public Index(WebDriver driver){
+    public Index(WebDriver driver)  {
         elements = new IndexElements(driver);
     }
 

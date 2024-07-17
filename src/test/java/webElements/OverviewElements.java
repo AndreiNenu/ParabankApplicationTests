@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.time.Duration;
+import java.util.List;
+
 public class OverviewElements {
 
     private WebDriver driver;
@@ -22,6 +25,12 @@ public class OverviewElements {
 
     public WebElement accountOverviewTitle(){
         return driver.findElement(By.xpath("//h1[contains(text(),'Accounts Overview')]"));
+    }
+
+    //Selects first two collumns of account overview table, first collumn is account ids, second is balance
+    public List<WebElement> userAccountAndBalance(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        return driver.findElements(By.xpath("//table[@id='accountTable']//tbody//td"));
     }
 
 

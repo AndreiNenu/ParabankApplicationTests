@@ -4,9 +4,11 @@ import actions.Index;
 import actions.OpenAccount;
 import actions.Overview;
 import actions.Transfer;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
+import java.util.List;
 
 public class SimulateAccounts extends BaseTests {
 
@@ -14,6 +16,8 @@ public class SimulateAccounts extends BaseTests {
     private Overview overview = null;
     private OpenAccount openAccount = null;
     private Transfer transfer = null;
+    String[] accountAndBalanceArray;
+    List<WebElement> accountsElements;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
     private ConfigLoader configLoaderText = new ConfigLoader("src/test/resources/properties/WebElementsText.properties");
 
@@ -30,9 +34,12 @@ public class SimulateAccounts extends BaseTests {
         String username = configLoader.getProperty("username");
         String password = configLoader.getProperty("password");
         String transferAmount = configLoaderText.getProperty("transferAmount");
-        String defaultAccount = configLoader.getProperty("defaultAccount");
-        String secondAccount = configLoader.getProperty("secondAccount");
-        String thirdAccount = configLoader.getProperty("thirdAccount");
+        //String defaultAccount = configLoader.getProperty("defaultAccount");
+        String defaultAccount ;
+        //String secondAccount = configLoader.getProperty("secondAccount");
+        String secondAccount;
+        //String thirdAccount = configLoader.getProperty("thirdAccount");
+        String thirdAccount;
         String checkingAccount = configLoader.getProperty("checkingAccount");
         String savingsAccount = configLoader.getProperty("savingsAccount");
 
@@ -40,11 +47,20 @@ public class SimulateAccounts extends BaseTests {
         index.loginUser(username, password);
 
         //Pasul 2: Creeaza 2 conturi noi(un savings si un checking)
-        //open first account
-         //openNewAccount(savingsAccount, defaultAccount);
+        //Get default account
+        overview.clickAccountOverview();
+        for(String str:overview.getAccountIdAndBalance()){System.out.println(str);}
+        defaultAccount = overview.getAccountIdAndBalance()[0];
 
         //open second account
-       // openNewAccount(checkingAccount, defaultAccount);
+        openNewAccount(savingsAccount, defaultAccount);
+        for(String str:overview.getAccountIdAndBalance()){System.out.println(str);}
+        secondAccount = overview.getAccountIdAndBalance()[3];
+
+        //open third account
+        openNewAccount(checkingAccount, defaultAccount);
+        for(String str:overview.getAccountIdAndBalance()){System.out.println(str);}
+        thirdAccount = overview.getAccountIdAndBalance()[6];
 
         //Pasul 3: Transfera bani intre conturi
         //transfer money from default to third account
@@ -72,4 +88,5 @@ public class SimulateAccounts extends BaseTests {
         openAccount.selectFromAccount(fromAccount);
         openAccount.clickOpenNewAccountButton();
     }
+
 }
