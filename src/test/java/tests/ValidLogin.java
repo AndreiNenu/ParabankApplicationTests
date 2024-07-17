@@ -21,6 +21,8 @@ public class ValidLogin extends BaseTests {
     @Test
     public void validLogin(){
 
+        initTest("Login Successfully");
+
         overview = new Overview(driver);
         index = new Index(driver);
         login = new Login(driver);

@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
 
-
 public class TransferFunds extends BaseTests {
 
     private Index index = null;
@@ -20,6 +19,8 @@ public class TransferFunds extends BaseTests {
 
     @Test
     public void transferFunds() {
+
+        initTest("Transfer Money");
 
         index = new Index(driver);
         overview = new Overview(driver);

@@ -18,6 +18,8 @@ public class LogoutUser extends BaseTests {
     @Test
     public void logoutUser(){
 
+        initTest("User Logout ");
+
         overview = new Overview(driver);
         index = new Index(driver);
         String username = configLoader.getProperty("username");

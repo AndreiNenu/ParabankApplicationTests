@@ -20,6 +20,8 @@ public class OpenNewAccount extends BaseTests {
     @Test
     public void openNewAccount() {
 
+        initTest("Opening Account");
+
         index = new Index(driver);
         overview = new Overview(driver);
         openAccount = new OpenAccount(driver);

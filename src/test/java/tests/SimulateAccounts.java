@@ -21,6 +21,8 @@ public class SimulateAccounts extends BaseTests {
     @Test
     public void simulateAccounts() {
 
+        initTest("User activity simulation");
+
         index = new Index(driver);
         overview = new Overview(driver);
         openAccount = new OpenAccount(driver);

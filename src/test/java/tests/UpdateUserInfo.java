@@ -20,6 +20,8 @@ public class UpdateUserInfo extends BaseTests {
     @Test
     public void updateUserInfo() {
 
+        initTest("Update User Data");
+
         index = new Index(driver);
         overview = new Overview(driver);
         updateProfile = new UpdateProfile(driver);

@@ -6,10 +6,7 @@ import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
 
-import javax.print.DocFlavor;
-
 public class MainMenuNavigation extends BaseTests {
-
 
     public Index index = null;
     private Overview overview = null;
@@ -24,6 +21,8 @@ public class MainMenuNavigation extends BaseTests {
 
     @Test
     public void mainMenuNavigation(){
+
+        initTest("Check Main Menu Links ");
 
         index = new Index(driver);
         openAccount = new OpenAccount(driver);
@@ -59,7 +58,6 @@ public class MainMenuNavigation extends BaseTests {
                     "Expected value: " + expectedArr[i]);
         }
 
-
         overview.clickAccountOverview();
         actualValue = overview.getAccountOverviewPageInfo();
         expectedArr = new String[]{"Accounts Overview", defaultAccount };
@@ -83,7 +81,6 @@ public class MainMenuNavigation extends BaseTests {
             System.out.println("Actual value: " + actualValue[i] + "\n" +
                     "Expected value: " + expectedArr[i]);
         }
-
 
         overview.clickBillPayLink();
         actualValue[0] = billpay.getBillPayTitle();
@@ -120,10 +117,5 @@ public class MainMenuNavigation extends BaseTests {
         System.out.println("Actual value: " + actualValue[0] + "\n" +
                 "Expected value: " + expectedValue);
 
-    }
-
-    public static String[] resize(String[] array, int capacity){
-        array = new String[capacity];
-        return array;
     }
 }

@@ -16,12 +16,9 @@ public class InvalidLogin extends BaseTests {
 
 
     @Test
-    public void invalidLogin(){
+    public void failedLogin(){
 
-
-        initTest("Invalid Login");
-
-
+        initTest("Login Failed");
 
         index = new Index(driver);
         login = new Login(driver);

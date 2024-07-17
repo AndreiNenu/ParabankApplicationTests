@@ -20,6 +20,8 @@ public class PayABill extends BaseTests {
     @Test
     public void payBillTest() {
 
+        initTest("Pay a bill");
+
         index = new Index(driver);
         overview = new Overview(driver);
         billpay = new Billpay(driver);

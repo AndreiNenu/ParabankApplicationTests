@@ -6,7 +6,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import webElements.OpenAccountElements;
-
 import java.time.Duration;
 
 public class OpenAccount {
@@ -74,7 +73,6 @@ public class OpenAccount {
         array[0] = getAccountPageTitle();
         array[1] = getAccountTypeDefaultText();
         array[2] = getFromAccountDefaultText();
-
 
         return array;
     }
