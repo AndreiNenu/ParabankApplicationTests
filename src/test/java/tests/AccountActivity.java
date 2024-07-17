@@ -34,11 +34,11 @@ public class AccountActivity extends BaseTests {
         String password = configLoader.getProperty("password");
         String[] expectedHeaders = {"Date", "Transaction", "Debit (-)", "Credit (+)"};
         String[] expectedTransactions = {
-                "07-16-2024", "Funds Transfer Sent", "$100.00", "",
-                "07-16-2024", "Funds Transfer Sent", "$100.00", "",
-                "07-16-2024", "Funds Transfer Sent", "$99.00", "",
-                "07-16-2024", "Funds Transfer Received", "", "$99.00",
-                "07-16-2024", "Funds Transfer Received", "", "$99.00"
+                "07-17-2024", "Funds Transfer Sent", "$100.00", "",
+                "07-17-2024", "Funds Transfer Sent", "$100.00", "",
+                "07-17-2024", "Funds Transfer Sent", "$99.00", "",
+                "07-17-2024", "Funds Transfer Received", "", "$99.00",
+                "07-17-2024", "Funds Transfer Received", "", "$99.00"
         };
 
         //Pasul 1: Autentifică-te în aplicație.

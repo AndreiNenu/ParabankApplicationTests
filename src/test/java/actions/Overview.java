@@ -52,6 +52,7 @@ public class Overview {
     }
 
     public String[] getAccountIdAndBalance(){
+        clickAccountOverview();
         wait.until(d-> !elements.userAccountAndBalance().isEmpty());
         String[] arrayOfStrings = new String[elements.userAccountAndBalance().size()-3];
         for(int i=0; i<elements.userAccountAndBalance().size()-3; i++){
