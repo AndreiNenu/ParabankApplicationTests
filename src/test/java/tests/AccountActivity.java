@@ -8,7 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utils.BaseTests;
 import utils.ConfigLoader;
-
 import java.util.List;
 
 public class AccountActivity extends BaseTests {
@@ -18,8 +17,11 @@ public class AccountActivity extends BaseTests {
     private Activity activity = null;
     private ConfigLoader configLoader = new ConfigLoader("src/test/resources/properties/userData.properties");
 
+
     @Test
-    public void accountActivity() {
+    public void transactionsHistory() {
+
+        initTest("Transaction History");
 
         index = new Index(driver);
         overview = new Overview(driver);

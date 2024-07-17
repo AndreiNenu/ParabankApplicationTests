@@ -17,6 +17,8 @@ public class RegisterUser extends BaseTests {
     @Test
     public void registerUser(){
 
+        initTest("Create User");
+
         index = new Index(driver);
         register = new Register(driver);
         String username = configLoader.getProperty("username");

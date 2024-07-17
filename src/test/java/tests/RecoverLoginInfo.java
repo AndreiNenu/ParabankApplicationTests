@@ -1,6 +1,5 @@
 package tests;
 
-
 import actions.Index;
 import actions.Lookup;
 import org.testng.Assert;
@@ -18,6 +17,8 @@ public class RecoverLoginInfo extends BaseTests {
 
     @Test
     public void recoverLoginInfo(){
+
+        initTest("Recover Account Data");
 
         lookup = new Lookup(driver);
         index = new Index(driver);

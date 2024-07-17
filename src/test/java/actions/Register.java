@@ -5,7 +5,6 @@ import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.ConfigLoader;
 import webElements.RegisterElements;
-
 import java.time.Duration;
 
 public class Register {
